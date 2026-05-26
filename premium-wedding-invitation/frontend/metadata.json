@@ -1,0 +1,8 @@
+
+{
+  "name": "Eternal Promise - Premium Wedding Invitation",
+  "description": "A high-end mobile wedding invitation featuring AI-generated cinematic visuals, background music controls, and real-time guestbook integration.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
