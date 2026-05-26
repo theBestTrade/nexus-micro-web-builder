@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexus Micro-Web Builder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      @layer base {
+        :root {
+          --background: 210 40% 98%;
+          --foreground: 222.2 84% 4.9%;
+          --primary: 221.2 83.2% 53.3%;
+          --radius: 1.5rem;
+        }
+      }
+      body {
+        font-family: 'Pretendard', sans-serif;
+        background-color: #f8fafc;
+      }
+      .hide-scrollbar::-webkit-scrollbar { display: none; }
+      .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+      .animate-float { animation: float 3s ease-in-out infinite; }
+    </style>
+      </head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.js"></script></body>
+</html>
