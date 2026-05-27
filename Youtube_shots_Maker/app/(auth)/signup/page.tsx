@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { createClient } from "@/lib/supabase/client";
 
-/* ── 소셜 아이콘 (login/page.tsx와 동일) ─────────────── */
+/* ── 소셜 아이콘 ─────────────────────────────────────── */
 const GoogleIcon = () => (
   <svg className="h-4 w-4 shrink-0" viewBox="0 0 24 24">
     <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
@@ -101,38 +101,44 @@ export default function SignupPage() {
         <h1 className="text-2xl font-semibold text-center mb-1">회원가입</h1>
         <p className="text-sm text-muted-foreground text-center mb-8">무료 계정을 만들어 시작하세요</p>
 
-        {/* ── 소셜 가입 버튼 3개 ── */}
-        <div className="space-y-2 mb-4">
-          {/* 구글 */}
-          <Button
-            type="button" variant="outline"
-            className="w-full gap-2 border-white/10 bg-white/5 hover:bg-white/10"
-            onClick={handleGoogle} disabled={!!socialLoading}
-          >
-            {socialLoading === "google" ? <Loader2 className="h-4 w-4 animate-spin" /> : <GoogleIcon />}
-            Google로 시작하기
+        {/* ── 이메일 가입 폼 ── */}
+        <form onSubmit={handleSignup} className="space-y-4 mb-6">
+          <div>
+            <label className="text-sm text-muted-foreground mb-1.5 block">이메일</label>
+            <Input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="email@example.com"
+              required
+            />
+          </div>
+          <div>
+            <label className="text-sm text-muted-foreground mb-1.5 block">비밀번호</label>
+            <Input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="8자 이상"
+              minLength={8}
+              required
+            />
+          </div>
+          <div>
+            <label className="text-sm text-muted-foreground mb-1.5 block">비밀번호 확인</label>
+            <Input
+              type="password"
+              value={confirm}
+              onChange={(e) => setConfirm(e.target.value)}
+              placeholder="비밀번호 재입력"
+              required
+            />
+          </div>
+          <Button type="submit" className="w-full bg-jade hover:bg-jade/90 text-surface font-semibold" disabled={loading}>
+            {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+            회원가입
           </Button>
-
-          {/* 카카오 */}
-          <Button
-            type="button"
-            className="w-full gap-2 bg-[#FEE500] text-[#3C1E1E] hover:bg-[#F5DC00]"
-            onClick={handleKakao} disabled={!!socialLoading}
-          >
-            {socialLoading === "kakao" ? <Loader2 className="h-4 w-4 animate-spin" /> : <KakaoIcon />}
-            카카오로 시작하기
-          </Button>
-
-          {/* 네이버 */}
-          <Button
-            type="button"
-            className="w-full gap-2 bg-[#03C75A] text-white hover:bg-[#02b350]"
-            onClick={handleNaver} disabled={!!socialLoading}
-          >
-            {socialLoading === "naver" ? <Loader2 className="h-4 w-4 animate-spin text-white" /> : <NaverIcon />}
-            네이버로 시작하기
-          </Button>
-        </div>
+        </form>
 
         {/* 구분선 */}
         <div className="relative mb-4">
@@ -140,34 +146,57 @@ export default function SignupPage() {
             <span className="w-full border-t border-white/10" />
           </div>
           <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-surface px-2 text-muted-foreground">또는 이메일로</span>
+            <span className="bg-surface px-2 text-muted-foreground">또는 소셜 계정으로</span>
           </div>
         </div>
 
-        {/* 이메일 가입 폼 */}
-        <form onSubmit={handleSignup} className="space-y-4">
-          <div>
-            <label className="text-sm text-muted-foreground mb-1.5 block">이메일</label>
-            <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)}
-              placeholder="email@example.com" required />
-          </div>
-          <div>
-            <label className="text-sm text-muted-foreground mb-1.5 block">비밀번호</label>
-            <Input type="password" value={password} onChange={(e) => setPassword(e.target.value)}
-              placeholder="8자 이상" minLength={8} required />
-          </div>
-          <div>
-            <label className="text-sm text-muted-foreground mb-1.5 block">비밀번호 확인</label>
-            <Input type="password" value={confirm} onChange={(e) => setConfirm(e.target.value)}
-              placeholder="비밀번호 재입력" required />
-          </div>
-          <Button type="submit" className="w-full" disabled={loading}>
-            {loading && <Loader2 className="h-4 w-4 animate-spin" />}
-            회원가입
+        {/* ── 소셜 가입 버튼 3개 ── */}
+        <div className="grid grid-cols-3 gap-2 mb-6">
+          {/* 구글 */}
+          <Button
+            type="button"
+            variant="outline"
+            className="h-10 gap-1.5 border-white/10 bg-white/5 hover:bg-white/10 text-xs px-2"
+            onClick={handleGoogle}
+            disabled={!!socialLoading}
+            title="Google로 가입"
+          >
+            {socialLoading === "google"
+              ? <Loader2 className="h-4 w-4 animate-spin" />
+              : <GoogleIcon />}
+            <span className="hidden sm:inline">Google</span>
           </Button>
-        </form>
 
-        <p className="text-center text-sm text-muted-foreground mt-6">
+          {/* 카카오 */}
+          <Button
+            type="button"
+            className="h-10 gap-1.5 bg-[#FEE500] text-[#3C1E1E] hover:bg-[#F5DC00] text-xs px-2"
+            onClick={handleKakao}
+            disabled={!!socialLoading}
+            title="카카오로 가입"
+          >
+            {socialLoading === "kakao"
+              ? <Loader2 className="h-4 w-4 animate-spin" />
+              : <KakaoIcon />}
+            <span className="hidden sm:inline">카카오</span>
+          </Button>
+
+          {/* 네이버 */}
+          <Button
+            type="button"
+            className="h-10 gap-1.5 bg-[#03C75A] text-white hover:bg-[#02b350] text-xs px-2"
+            onClick={handleNaver}
+            disabled={!!socialLoading}
+            title="네이버로 가입"
+          >
+            {socialLoading === "naver"
+              ? <Loader2 className="h-4 w-4 animate-spin text-white" />
+              : <NaverIcon />}
+            <span className="hidden sm:inline">네이버</span>
+          </Button>
+        </div>
+
+        <p className="text-center text-sm text-muted-foreground">
           이미 계정이 있으신가요?{" "}
           <Link href="/login" className="text-jade hover:underline">로그인</Link>
         </p>
