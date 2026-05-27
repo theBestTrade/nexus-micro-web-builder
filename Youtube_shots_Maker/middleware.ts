@@ -41,14 +41,15 @@ export async function middleware(request: NextRequest) {
   ];
   const isProtected = protectedPaths.some((p) => pathname.startsWith(p));
 
-  // 미인증 → 로그인 페이지로
+  // 미인증 → 랜딩 페이지 로그인 모달로 (쿼리 파라미터로 모달 오픈 신호 전달)
   if (isProtected && !user) {
     const url = request.nextUrl.clone();
-    url.pathname = "/login";
+    url.pathname = "/";
+    url.searchParams.set("login", "1");
     return NextResponse.redirect(url);
   }
 
-  // 이미 로그인 상태에서 auth 페이지 접근 → 대시보드로
+  // 이미 로그인 상태에서 /login·/signup 직접 접근 → 대시보드로
   if (user && (pathname === "/login" || pathname === "/signup")) {
     const url = request.nextUrl.clone();
     url.pathname = "/dashboard";
