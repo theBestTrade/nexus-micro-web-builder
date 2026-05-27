@@ -133,49 +133,46 @@ export default function LoginPage() {
           </div>
         </div>
 
-        {/* ── 소셜 로그인 버튼 3개 ── */}
-        <div className="grid grid-cols-3 gap-2 mb-6">
+        {/* ── 소셜 로그인 버튼 3개 (세로 배열) ── */}
+        <div className="flex flex-col gap-2 mb-6">
           {/* 구글 */}
           <Button
             type="button"
             variant="outline"
-            className="h-10 gap-1.5 border-white/10 bg-white/5 hover:bg-white/10 text-xs px-2"
+            className="w-full h-10 gap-2 border-white/10 bg-white/5 hover:bg-white/10 text-sm justify-center"
             onClick={handleGoogle}
             disabled={!!socialLoading}
-            title="Google로 로그인"
           >
             {socialLoading === "google"
               ? <Loader2 className="h-4 w-4 animate-spin" />
               : <GoogleIcon />}
-            <span className="hidden sm:inline">Google</span>
+            Google로 로그인
           </Button>
 
           {/* 카카오 */}
           <Button
             type="button"
-            className="h-10 gap-1.5 bg-[#FEE500] text-[#3C1E1E] hover:bg-[#F5DC00] text-xs px-2"
+            className="w-full h-10 gap-2 bg-[#FEE500] text-[#3C1E1E] hover:bg-[#F5DC00] text-sm justify-center"
             onClick={handleKakao}
             disabled={!!socialLoading}
-            title="카카오로 로그인"
           >
             {socialLoading === "kakao"
               ? <Loader2 className="h-4 w-4 animate-spin" />
               : <KakaoIcon />}
-            <span className="hidden sm:inline">카카오</span>
+            카카오로 로그인
           </Button>
 
           {/* 네이버 */}
           <Button
             type="button"
-            className="h-10 gap-1.5 bg-[#03C75A] text-white hover:bg-[#02b350] text-xs px-2"
+            className="w-full h-10 gap-2 bg-[#03C75A] text-white hover:bg-[#02b350] text-sm justify-center"
             onClick={handleNaver}
             disabled={!!socialLoading}
-            title="네이버로 로그인"
           >
             {socialLoading === "naver"
               ? <Loader2 className="h-4 w-4 animate-spin text-white" />
               : <NaverIcon />}
-            <span className="hidden sm:inline">네이버</span>
+            네이버로 로그인
           </Button>
         </div>
 
