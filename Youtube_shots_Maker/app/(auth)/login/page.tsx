@@ -47,6 +47,8 @@ export default function LoginPage() {
       const { error } = await supabase.auth.signInWithPassword({ email, password });
       if (error) throw error;
       toast.success("로그인 성공!");
+      // router.refresh()로 서버 컴포넌트(미들웨어 포함)가 새 세션 쿠키를 인식하게 한 뒤 이동
+      router.refresh();
       router.push("/dashboard");
     } catch (err: unknown) {
       toast.error((err as Error).message || "로그인 실패");
