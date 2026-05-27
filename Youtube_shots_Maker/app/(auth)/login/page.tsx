@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { Zap, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
@@ -32,7 +31,6 @@ const NaverIcon = () => (
 );
 
 export default function LoginPage() {
-  const router   = useRouter();
   const supabase = createClient();
   const [email,    setEmail]    = useState("");
   const [password, setPassword] = useState("");
@@ -47,9 +45,8 @@ export default function LoginPage() {
       const { error } = await supabase.auth.signInWithPassword({ email, password });
       if (error) throw error;
       toast.success("로그인 성공!");
-      // router.refresh()로 서버 컴포넌트(미들웨어 포함)가 새 세션 쿠키를 인식하게 한 뒤 이동
-      router.refresh();
-      router.push("/dashboard");
+      // 하드 네비게이션으로 전체 페이지 재로드 → 미들웨어가 새 세션 쿠키를 확실히 인식
+      window.location.href = "/dashboard";
     } catch (err: unknown) {
       toast.error((err as Error).message || "로그인 실패");
     } finally {
