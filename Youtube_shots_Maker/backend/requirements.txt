@@ -1,0 +1,52 @@
+# ─── Web Framework ───────────────────────────────────────────
+fastapi==0.115.5
+uvicorn[standard]==0.32.1
+
+# ─── Validation & Settings ───────────────────────────────────
+pydantic==2.10.3
+pydantic-settings==2.6.1
+
+# ─── Database ────────────────────────────────────────────────
+supabase==2.10.0
+
+# ─── Encryption ──────────────────────────────────────────────
+cryptography==43.0.3
+
+# ─── HTTP Client ─────────────────────────────────────────────
+httpx==0.28.0
+
+# ─── Browser Automation (Playwright) ─────────────────────────
+playwright==1.49.0
+
+# ─── Task Queue ──────────────────────────────────────────────
+celery==5.4.0
+redis==5.2.1
+
+# ─── Media / Download ─────────────────────────────────────────
+yt-dlp==2024.12.6
+aiofiles==24.1.0
+
+# ─── AI: STT ──────────────────────────────────────────────────
+openai-whisper==20231117
+# torch / torchaudio: whisper & demucs 공통 의존성 (CUDA 있으면 자동 GPU 사용)
+# pip install torch torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+# ─── AI: Audio Separation ─────────────────────────────────────
+demucs==4.0.1
+
+# ─── AI: LLM ──────────────────────────────────────────────────
+anthropic==0.40.0
+
+# ─── AI: TTS ──────────────────────────────────────────────────
+edge-tts==6.1.12
+
+# ─── Utilities ───────────────────────────────────────────────
+python-dotenv==1.0.1
+python-multipart==0.0.18
+python-dateutil==2.9.0
+
+# ─── Channel Publisher (YouTube / Instagram / TikTok) ─────────
+# httpx 로 직접 API 호출 (별도 SDK 불필요)
+# YouTube Data API v3: httpx Resumable Upload
+# Instagram Graph API: httpx 2단계 Reels 업로드
+# TikTok Content API v2: httpx 청크 업로드
