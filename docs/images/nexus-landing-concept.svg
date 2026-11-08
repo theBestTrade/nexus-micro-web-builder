@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="920" viewBox="0 0 1440 920">
+<defs><linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#0B1024"/><stop offset="1" stop-color="#1C2452"/></linearGradient><linearGradient id="p" x1="0" x2="1"><stop stop-color="#746CFF"/><stop offset="1" stop-color="#4CD5DE"/></linearGradient><filter id="s"><feDropShadow dx="0" dy="12" stdDeviation="16" flood-opacity=".28"/></filter></defs>
+<rect width="1440" height="920" fill="#eef1f9"/><rect x="32" y="28" width="1376" height="864" rx="28" fill="#fff" filter="url(#s)"/>
+<rect x="32" y="28" width="1376" height="606" rx="28" fill="url(#bg)"/><rect x="32" y="596" width="1376" height="38" fill="url(#bg)"/>
+<g font-family="Arial,'Noto Sans KR',sans-serif">
+<rect x="78" y="67" width="41" height="41" rx="12" fill="url(#p)"/><text x="91" y="96" fill="#fff" font-size="24" font-weight="bold">N</text>
+<text x="135" y="94" fill="#fff" font-size="22" font-weight="bold">NEXUS</text><text x="235" y="93" fill="#b8c3e3" font-size="14">MICRO WEB BUILDER</text>
+<text x="868" y="92" fill="#d6def8" font-size="15">서비스 소개</text><text x="988" y="92" fill="#d6def8" font-size="15">비즈니스 모델</text><text x="1128" y="92" fill="#d6def8" font-size="15">제작 프로세스</text>
+<rect x="1256" y="64" width="108" height="44" rx="13" fill="#6d65fa"/><text x="1272" y="92" fill="#fff" font-size="15" font-weight="bold">시작하기</text>
+<rect x="83" y="184" width="250" height="35" rx="17" fill="#272f60" stroke="#535fa9"/><text x="103" y="207" fill="#a8e9fa" font-size="14">12가지 수익형 모바일 웹 모델</text>
+<text x="82" y="287" fill="#fff" font-size="47" font-weight="bold">작은 웹사이트에서</text><text x="82" y="347" fill="#fff" font-size="47" font-weight="bold">새로운 비즈니스까지.</text>
+<text x="85" y="405" fill="#c0cbec" font-size="18">시장성·수익구조·디자인을 한눈에 비교하고</text><text x="85" y="432" fill="#c0cbec" font-size="18">모바일 화면을 미리 보며 MVP를 기획하세요.</text>
+<rect x="83" y="473" width="204" height="54" rx="14" fill="url(#p)"/><text x="111" y="506" fill="#101838" font-size="17" font-weight="bold">12종 모델 살펴보기</text>
+<rect x="301" y="473" width="164" height="54" rx="14" fill="none" stroke="#98a4cf"/><text x="336" y="506" fill="#fff" font-size="17">시안 미리보기</text>
+<rect x="706" y="168" width="626" height="401" rx="20" fill="#f8faff" filter="url(#s)"/>
+<rect x="706" y="168" width="171" height="401" rx="20" fill="#f1f4ff"/><text x="726" y="208" fill="#18264b" font-size="16" font-weight="bold">모델 탐색</text>
+<rect x="721" y="226" width="141" height="37" rx="9" fill="#e0e4ff"/><text x="735" y="250" fill="#514ed7" font-size="14">모바일 청첩장</text>
+<text x="735" y="293" fill="#64708a" font-size="14">QR 메뉴판</text><text x="735" y="335" fill="#64708a" font-size="14">디지털 명함</text><text x="735" y="377" fill="#64708a" font-size="14">미니 홈페이지</text><text x="735" y="419" fill="#64708a" font-size="14">온라인 갤러리</text>
+<text x="901" y="207" fill="#192548" font-size="16" font-weight="bold">Business Model Overview</text>
+<rect x="900" y="229" width="188" height="106" rx="13" fill="#eeebff"/><text x="918" y="257" fill="#5f5db8" font-size="13">기획 가격대</text><text x="917" y="298" fill="#27245a" font-size="25" font-weight="bold">8만~25만원</text>
+<rect x="1101" y="229" width="203" height="106" rx="13" fill="#e5f8fa"/><text x="1119" y="257" fill="#32777f" font-size="13">주요 수익 방식</text><text x="1119" y="294" fill="#185660" font-size="21" font-weight="bold">제작형 · B2C</text>
+<rect x="900" y="351" width="404" height="186" rx="14" fill="#fff" stroke="#e1e6f3"/>
+<text x="921" y="379" fill="#253452" font-size="14" font-weight="bold">비즈니스 모델 비교 (예시 점수)</text>
+<line x1="938" y1="485" x2="1273" y2="485" stroke="#cbd5e9"/><line x1="938" y1="407" x2="938" y2="485" stroke="#cbd5e9"/>
+<circle cx="1072" cy="441" r="11" fill="#6b63f6"/><circle cx="1184" cy="419" r="9" fill="#33b8c5"/><circle cx="1232" cy="453" r="8" fill="#a4a0ef"/><circle cx="1025" cy="463" r="7" fill="#6d9cf6"/>
+<text x="77" y="692" fill="#242c4d" font-size="24" font-weight="bold">하나의 플랫폼, 네 가지 성장 단계</text>
+<g fill="#f5f6fd" stroke="#e2e6f3"><rect x="77" y="719" width="305" height="119" rx="17"/><rect x="405" y="719" width="305" height="119" rx="17"/><rect x="733" y="719" width="305" height="119" rx="17"/><rect x="1061" y="719" width="305" height="119" rx="17"/></g>
+<g fill="#4244a7" font-size="15" font-weight="bold"><text x="100" y="754">01  시장·BM 분석</text><text x="428" y="754">02  모바일 UI 검증</text><text x="756" y="754">03  템플릿 제작</text><text x="1084" y="754">04  SaaS 확장</text></g>
+<g fill="#60708c" font-size="13"><text x="100" y="782">가격·시장성 가설 비교</text><text x="100" y="804">고객 세그먼트 정의</text><text x="428" y="782">12종 모바일 목업</text><text x="428" y="804">사용자 반응 테스트</text><text x="756" y="782">맞춤형 콘텐츠·브랜딩</text><text x="756" y="804">반복 제작 모듈화</text><text x="1084" y="782">계정·결제·운영 자동화</text><text x="1084" y="804">월구독·B2B 판매</text></g>
+<text x="81" y="865" fill="#8790a6" font-size="13">CONCEPT DESIGN • 계획된 랜딩페이지 시안 (실서비스 화면이 아님) • 2026.11</text>
+</g></svg>
